@@ -1,0 +1,22 @@
+#mpa_vJan25_CHOCOPhlAnSGB_202503
+#/mnt/transient_data/conda/envs/metaphlan/bin/metaphlan --tmp_dir temp_dir --no_map -t rel_ab_w_read_stats --nproc 8 SRR23994336_R1.fastq.gz,SRR23994336_R2.fastq.gz --input_type fastq --bowtie2out SRR23994336_bowtie2.out.txt --bowtie2db /mnt/data/BP_Temporary/metaphlan_db --index mpa_vJan25_CHOCOPhlAnSGB_202503
+#9277041 reads processed
+#Average read length 140.98231408053493
+#SampleID	Metaphlan_Analysis
+#estimated_reads_mapped_to_known_clades:8240168
+#clade_name	clade_taxid	relative_abundance	coverage	estimated_number_of_reads_from_the_clade
+k__Bacteria	2	100.0	1.80184	8240168
+k__Bacteria|p__Pseudomonadota	2|1224	67.01616	1.20752	6840820
+k__Bacteria|p__Actinomycetota	2|201174	32.98384	0.59432	1399348
+k__Bacteria|p__Pseudomonadota|c__Gammaproteobacteria	2|1224|1236	67.01616	1.20752	6840820
+k__Bacteria|p__Actinomycetota|c__Actinomycetes	2|201174|1760	32.98384	0.59432	1399348
+k__Bacteria|p__Pseudomonadota|c__Gammaproteobacteria|o__Enterobacterales	2|1224|1236|91347	67.01616	1.20752	6840820
+k__Bacteria|p__Actinomycetota|c__Actinomycetes|o__Bifidobacteriales	2|201174|1760|85004	32.98384	0.59432	1399348
+k__Bacteria|p__Pseudomonadota|c__Gammaproteobacteria|o__Enterobacterales|f__Enterobacteriaceae	2|1224|1236|91347|543	67.01616	1.20752	6840820
+k__Bacteria|p__Actinomycetota|c__Actinomycetes|o__Bifidobacteriales|f__Bifidobacteriaceae	2|201174|1760|85004|31953	32.98384	0.59432	1399348
+k__Bacteria|p__Pseudomonadota|c__Gammaproteobacteria|o__Enterobacterales|f__Enterobacteriaceae|g__Klebsiella	2|1224|1236|91347|543|570	67.01616	1.20752	6840820
+k__Bacteria|p__Actinomycetota|c__Actinomycetes|o__Bifidobacteriales|f__Bifidobacteriaceae|g__Bifidobacterium	2|201174|1760|85004|31953|1678	32.98384	0.59432	1399348
+k__Bacteria|p__Pseudomonadota|c__Gammaproteobacteria|o__Enterobacterales|f__Enterobacteriaceae|g__Klebsiella|s__Klebsiella_pneumoniae	2|1224|1236|91347|543|570|573	67.01616	1.20752	6840820
+k__Bacteria|p__Actinomycetota|c__Actinomycetes|o__Bifidobacteriales|f__Bifidobacteriaceae|g__Bifidobacterium|s__Bifidobacterium_breve	2|201174|1760|85004|31953|1678|1685	32.98384	0.59432	1399348
+k__Bacteria|p__Pseudomonadota|c__Gammaproteobacteria|o__Enterobacterales|f__Enterobacteriaceae|g__Klebsiella|s__Klebsiella_pneumoniae|t__SGB10115_group	2|1224|1236|91347|543|570|573|	67.01616	1.20752	6840820
+k__Bacteria|p__Actinomycetota|c__Actinomycetes|o__Bifidobacteriales|f__Bifidobacteriaceae|g__Bifidobacterium|s__Bifidobacterium_breve|t__SGB17247	2|201174|1760|85004|31953|1678|1685|	32.98384	0.59432	1399348

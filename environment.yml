@@ -1,0 +1,9 @@
+name: metaxsfr
+channels:
+  - bioconda/noarch
+  - conda-forge
+dependencies:
+  - python>=3.8
+  - nextflow>=22.04.0
+  - orjson
+  - pip

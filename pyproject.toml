@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metaxsfr"
+version = "0.1.0"
+description = "Metagenome Taxonomic Explorer in a Single-File Report"
+authors = [{name = "Budi Permana", email = "nalar.bp@gmail.com"}]
+requires-python = ">=3.8"
+dependencies = ["orjson"]
+readme = "README.md"
+license = {text = "Apache 2.0"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[project.urls]
+Homepage = "https://github.com/nalarbp/metaxsfr"
+Repository = "https://github.com/nalarbp/metaxsfr"
+
+[project.scripts]
+metaxsfr = "metaxsfr:main"
+
+[tool.setuptools]
+py-modules = ["metaxsfr"]
