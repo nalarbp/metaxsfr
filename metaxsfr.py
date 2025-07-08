@@ -127,7 +127,7 @@ def run_metaxsfr_pipeline(reports, report_type, report_db, output,
 def main():
     parser = argparse.ArgumentParser(
         prog="metaxsfr",
-        description="METAXSFR: Metagenomics Analysis in a Single File Report",
+        description="METAXSFR: Metagenome Taxonomic Explorer in a Single-File Report",
         epilog="Example: metaxsfr -r 'reports/*.txt' -t bracken -d gtdb -o results",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
