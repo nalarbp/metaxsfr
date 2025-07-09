@@ -32,16 +32,14 @@ mamba activate metaxsfr
 3. Install METAXSFR:
 ```bash
 pip install -e .
-```
-
-3. Test it:
-```bash
-metaxsfr -h
+metaxsfr -h #to confirm its installed properly
 ```
 
 ## Basic usage
+This repository contains input file examples located in [sample/](sample/) directory for you to try metaxsfr. Run the following command:
 
 ```bash
+ls sample/ #to see example of required input files
 metaxsfr -r './sample/bracken/*.txt' -t bracken -d gtdb -o results
 ```
 
