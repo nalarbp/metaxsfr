@@ -2,7 +2,7 @@
 METAXSFR (Metagenome Taxonomic Explorer in a Single-File Report) is a Nextflow pipeline that processes taxonomic profiling reports from various metagenomics tools (Kraken2, Bracken, MetaPhlAn4) and generates an single HTML file for interactive visualisation and analysis.
 
 ## Example report
-Try and download interactive METAXSFR report file from [https://scifr.fordelab.com/metaxsfr](https://scifr.fordelab.com/metaxsfr)
+Try and download example of interactive METAXSFR report file from [https://scifr.fordelab.com/metaxsfr](https://scifr.fordelab.com/metaxsfr)
 
 ## Features
 - **Multiple tool support**: Kraken2, Bracken, and MetaPhlAn4 reports
