@@ -158,7 +158,7 @@ process GENERATING_REPORT {
     script:
     """
     echo '${groovy.json.JsonOutput.toJson(params)}' > params.json
-    generateMETAXSFR.py \\
+    generateMetaxsfr.py \\
         --summary_table ${sample_summary_tsv} \\
         --taxonomy_table ${sample_taxonomy_tsv} \\
         --template ${template_file} \\
