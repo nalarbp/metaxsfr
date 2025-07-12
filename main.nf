@@ -27,7 +27,12 @@ if (params.report_db == null) {
 //workflow
 workflow {
     ch_reports = Channel
-        .fromPath(params.reports, checkIfExists: true)
+        .fromPath(
+            params.reports.contains(',') ? 
+            params.reports.split(',').collect { it.trim().replaceAll('"', '') } : 
+            params.reports.trim().replaceAll('"', ''), 
+        checkIfExists: true
+        )
         .map { report ->
             def id = report.baseName.replaceAll(/[^a-zA-Z0-9_]/, '_')
             tuple(id, report)

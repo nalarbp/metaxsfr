@@ -42,11 +42,48 @@ def validate_inputs(reports, report_type, report_db):
         if not report_files:
             sys.exit(f"Error: No report files found matching pattern '{reports}'")
         print(f"+++ Found {len(report_files)} report files matching pattern")
+    
+    #handle multiple files, comma-separated    
+    elif ',' in reports:
+        files = [f.strip().strip('"\'') for f in reports.split(',')]
+        total_files = 0
+        
+        for f in files:
+            if '*' in f or '?' in f or '[' in f:
+                matches = glob.glob(f)
+                if not matches:
+                    sys.exit(f"Error: No files found matching pattern '{f}'")
+                total_files += len(matches)
+            else:
+                if not os.path.exists(f):
+                    sys.exit(f"Error: File '{f}' does not exist")
+                total_files += 1
+        
+        print(f"+++ Found {total_files} report files total")
+    
+    #handle single file or glob    
     else:
-        #single file or dir
         if not os.path.exists(reports):
             sys.exit(f"Error: Reports path '{reports}' does not exist")
 
+def transform_reports_for_nextflow(reports):
+    #multiple files, comma-separated 
+    if ',' in reports:
+        files = [f.strip().strip('"\'') for f in reports.split(',')]
+        expanded_files = []
+        for f in files:
+            if '*' in f or '?' in f or '[' in f:
+                matches = glob.glob(f)
+                expanded_files.extend(matches)
+            else:
+                expanded_files.append(f)
+        
+        #return comma-separated
+        return ','.join(expanded_files)
+    #else as is (single or glob)
+    else:
+        return reports
+    
 def get_taxid_map(report_db):
     if report_db == 'ncbi':
         return TAXID_NCBI
@@ -84,6 +121,7 @@ def run_metaxsfr_pipeline(reports, report_type, report_db, output,
     
     #preflight
     validate_inputs(reports, report_type, report_db)
+    transformed_reports = transform_reports_for_nextflow(reports)
     taxid_map = get_taxid_map(report_db)
     taxrank_list = get_taxrank_list(report_db)
     main_nf_path = find_main_nf()
@@ -92,7 +130,7 @@ def run_metaxsfr_pipeline(reports, report_type, report_db, output,
     #build nf command
     nextflow_cmd = ["nextflow", "run", main_nf_path]
     nextflow_cmd.extend([
-        f"--reports={reports}",
+        f"--reports={transformed_reports}",
         f"--report_type={report_type}",
         f"--report_db={report_db}",
         f"--results_directory={output}",

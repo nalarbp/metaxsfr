@@ -41,6 +41,7 @@ This repository contains input file examples located in [sample/](sample/) direc
 ```bash
 ls sample/ #to see example of required input files
 metaxsfr -r './sample/bracken/*.txt' -t bracken -d gtdb -o results
+metaxsfr -r './sample/bracken/SRR23994336.breport.txt,./sample/bracken/SRR23994337.breport.txt' -t bracken -d gtdb -o results #use comma to separate multiple reports
 ```
 
 ### Required parameters
