@@ -35,6 +35,19 @@ pip install -e .
 metaxsfr -h #to confirm its installed properly
 ```
 
+### How to update
+1. Navigate to your BLITSFR directory and activate the environment:
+```bash
+cd metaxsfr
+mamba activate metaxsfr
+```
+
+2. Pull the latest changes and update from the repository:
+```bash
+git pull origin main
+pip install -e . --force-reinstall
+```
+
 ## Basic usage
 This repository contains input file examples located in [sample/](sample/) directory for you to try metaxsfr. Run the following command:
 
@@ -44,6 +57,18 @@ metaxsfr -r './sample/bracken/*.txt' -t bracken -d gtdb -o results
 metaxsfr -r './sample/bracken/SRR23994336.breport.txt,./sample/bracken/SRR23994337.breport.txt' -t bracken -d gtdb -o results #use comma to separate multiple reports
 ```
 
+### How to update
+
+1. Navigate to your BLITSFR directory and activate the environment:
+```bash
+cd blitsfr
+mamba activate blitsfr
+```
+
+2. Pull the latest changes and update from the repository:
+```bash
+git pull origin main
+pip install -e . --force-reinstall
 ### Required parameters
 
 - `-r, --reports`: Path to report file(s). Supports wildcards (must be quoted)

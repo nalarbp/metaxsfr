@@ -201,3 +201,26 @@ process VALIDATE_REPORT {
     fi
     """
 }
+
+workflow.onComplete {
+    def duration = workflow.duration
+    def status = workflow.success ? 'SUCCESS' : 'FAILED'
+    
+    //ansi colour codes
+    def green = '\033[32m'
+    def red = '\033[31m'
+    def blue = '\033[34m'
+    def yellow = '\033[33m'
+    def cyan = '\033[36m'
+    def bold = '\033[1m'
+    def reset = '\033[0m'
+    
+    def statusColour = workflow.success ? green : red
+    
+    println """
+${blue}Started at:${reset} ${workflow.start}
+${blue}Completed at:${reset} ${workflow.complete}
+${yellow}Duration:${reset} ${bold}${duration}${reset}
+${blue}Status:${reset} ${statusColour}${bold}${status}${reset}
+"""
+}

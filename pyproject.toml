@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "metaxsfr"
-version = "0.1.0"
+version = "0.1.1"
 description = "Metagenome Taxonomic Explorer in a Single-File Report"
 authors = [{name = "Budi Permana", email = "nalar.bp@gmail.com"}]
 requires-python = ">=3.8"

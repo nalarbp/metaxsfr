@@ -117,7 +117,9 @@ def find_main_nf():
     sys.exit("Error: Cannot find main.nf. Please ensure METAXSFR is correctly installed.")
 
 def run_metaxsfr_pipeline(reports, report_type, report_db, output, 
-                         min_abundance, executor, resume, config, nf_args):
+                         min_abundance, executor, resume, config, nf_args, version):
+    
+    print(f"+++ Starting METAXSFR v{version}")
     
     #preflight
     validate_inputs(reports, report_type, report_db)
@@ -138,7 +140,7 @@ def run_metaxsfr_pipeline(reports, report_type, report_db, output,
         f"--taxrank_list={','.join(taxrank_list)}",
         f"--min_percent_abundance={min_abundance}",
         f"--executor={executor}",
-        f"--pipeline_version=v0.1.0"
+        f"--pipeline_version={version}"
     ])
     
     #add nf options
@@ -169,6 +171,10 @@ def main():
         epilog="Example: metaxsfr -r 'reports/*.txt' -t bracken -d gtdb -o results",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
+    
+    #version
+    version = '0.1.1'
+    parser.add_argument("-v", "--version", action="version", version=f"%(prog)s {version}")
     
     #required params
     parser.add_argument("-r", "--reports", required=True,
@@ -206,7 +212,8 @@ def main():
         executor=args.executor,
         resume=args.resume,
         config=args.config,
-        nf_args=args.nf_args
+        nf_args=args.nf_args,
+        version=version
     )
 
 if __name__ == "__main__":
