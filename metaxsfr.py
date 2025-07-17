@@ -131,6 +131,7 @@ def run_metaxsfr_pipeline(reports, report_type, report_db, output,
     
     #build nf command
     nextflow_cmd = ["nextflow", "run", main_nf_path]
+    nextflow_cmd.append(f"-w {output}")
     nextflow_cmd.extend([
         f"--reports={transformed_reports}",
         f"--report_type={report_type}",
