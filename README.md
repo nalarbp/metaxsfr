@@ -36,7 +36,7 @@ metaxsfr -h #to confirm its installed properly
 ```
 
 ### How to update
-1. Navigate to your BLITSFR directory and activate the environment:
+1. Navigate to your Metaxsfr directory and activate the environment:
 ```bash
 cd metaxsfr
 mamba activate metaxsfr
@@ -61,8 +61,8 @@ metaxsfr -r './sample/bracken/SRR23994336.breport.txt,./sample/bracken/SRR239943
 
 1. Navigate to your BLITSFR directory and activate the environment:
 ```bash
-cd blitsfr
-mamba activate blitsfr
+cd metaxsfr
+mamba activate metaxsfr
 ```
 
 2. Pull the latest changes and update from the repository:
