@@ -16,7 +16,24 @@ Try and download example of interactive METAXSFR report file from [https://scifr
 - Conda or Mamba (https://conda-forge.org/download/)
 - Git (https://git-scm.com/downloads)
 
-### Quick install
+### Quick install (Recommended)
+Install METAXSFR with a single command:
+```bash
+curl -fsSL https://raw.githubusercontent.com/nalarbp/metaxsfr/main/install.sh | bash
+```
+
+After installation, activate the environment and test:
+```bash
+conda activate metaxsfr
+metaxsfr -h
+```
+
+Try with sample data:
+```bash
+metaxsfr -r '~/metaxsfr/sample/bracken/*.txt' -t bracken -d gtdb -o results
+```
+
+### Manual installation
 1. Clone this repository:
 ```bash
 git clone https://github.com/nalarbp/metaxsfr.git
@@ -36,39 +53,32 @@ metaxsfr -h #to confirm its installed properly
 ```
 
 ### How to update
-1. Navigate to your Metaxsfr directory and activate the environment:
+1. Navigate to your METAXSFR directory and activate the environment:
 ```bash
-cd metaxsfr
-mamba activate metaxsfr
+cd ~/metaxsfr
+conda activate metaxsfr
 ```
 
-2. Pull the latest changes and update from the repository:
+2. Pull the latest changes and update:
 ```bash
 git pull origin main
 pip install -e . --force-reinstall
 ```
 
 ## Basic usage
-This repository contains input file examples located in [sample/](sample/) directory for you to try metaxsfr. Run the following command:
+This repository contains input file examples in the [sample/](sample/) directory for testing:
 
 ```bash
-ls sample/ #to see example of required input files
-metaxsfr -r './sample/bracken/*.txt' -t bracken -d gtdb -o results
-metaxsfr -r './sample/bracken/SRR23994336.breport.txt,./sample/bracken/SRR23994337.breport.txt' -t bracken -d gtdb -o results #use comma to separate multiple reports
+# View available sample files
+ls ~/metaxsfr/sample/
+
+# Process Bracken reports with GTDB database
+metaxsfr -r '~/metaxsfr/sample/bracken/*.txt' -t bracken -d gtdb -o results
+
+# Process specific files (comma-separated)
+metaxsfr -r '~/metaxsfr/sample/bracken/SRR23994336.breport.txt,~/metaxsfr/sample/bracken/SRR23994337.breport.txt' -t bracken -d gtdb -o results
 ```
 
-### How to update
-
-1. Navigate to your BLITSFR directory and activate the environment:
-```bash
-cd metaxsfr
-mamba activate metaxsfr
-```
-
-2. Pull the latest changes and update from the repository:
-```bash
-git pull origin main
-pip install -e . --force-reinstall
 ### Required parameters
 
 - `-r, --reports`: Path to report file(s). Supports wildcards (must be quoted)
