@@ -2,13 +2,13 @@
 METAXSFR (Metagenome Taxonomic Explorer in a Single-File Report) is a Nextflow pipeline that processes taxonomic profiling reports from various metagenomics tools (Kraken2, Bracken, MetaPhlAn4) and generates an single HTML file for interactive visualisation and analysis.
 
 ## Example report
-Try and download example of interactive METAXSFR report file from [https://scifr.fordelab.com/metaxsfr](https://scifr.fordelab.com/metaxsfr)
+Try and download example of interactive METAXSFR report file from [https://scifr.fordelab.com/metaxsfr](https://scifr.fordelab.com/metaxsfr) or [https://nalarbp.github.io/metaxsfr](https://nalarbp.github.io/metaxsfr)
 
 ## Features
 - **Multiple tool support**: Kraken2, Bracken, and MetaPhlAn4 reports
 - **Database flexibility**: NCBI and GTDB taxonomic classifications
 - **Batch processing**: Handle multiple samples efficiently using nextflow
-- **Interactive reports**: Single self-contained HTML output built using [SCIFR](https://scifr.fordelab.com/)
+- **Interactive reports**: Single self-contained HTML output built using [SCIFR](https://nalarbp.github.io/scifr)
 
 ## Installation
 
@@ -132,7 +132,9 @@ results/
 If you use METAXSFR in your research, please cite:
 
 ```
-[Coming soon]
+Interactive data analysis and reporting with SCIFR: A Single-File SPA Approach
+Budi Permana, Thom P. Cuddihy, Brian M. Forde
+bioRxiv 2025.07.10.664259; doi: https://doi.org/10.1101/2025.07.10.664259 
 ```
 
 ## License
